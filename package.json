@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-yup-data-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Data Validator Node with Yup for n8n",
   "keywords": [
     "n8n-community-node-package",
@@ -35,7 +35,7 @@
     "n8nNodesApiVersion": 1,
     "credentials": [],
     "nodes": [
-      "dist/nodes/YupDataValidator/YupDataValidation.node.js"
+      "dist/nodes/YupDataValidator/YupDataValidator.node.js"
     ]
   },
   "dependencies": {
