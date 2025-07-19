@@ -13,6 +13,7 @@ class YupValidation implements INodeType {
 		name: 'yupValidation',
 		group: ['transform'],
 		version: 1,
+		icon: { light: 'file:logo_light.svg', dark: 'file:logo_dark.svg' },
 		description: 'Yup Validation Node',
 		defaults: {
 			name: 'Yup Validation',
