@@ -38,18 +38,17 @@ class YupValidation implements INodeType {
 							{
 								displayName: 'Field Value',
 								name: 'fieldValue',
-								type: 'string',
+								type: 'json',
 								default: '',
-								description: 'The key of the field to validate from the input data',
+								description: 'The value of the field to validate from the input data',
 							},
 							{
 								displayName: 'Validation Schema',
 								name: 'validationSchema',
 								type: 'string',
-								default: 'string().required()',
+								default: 'yup.string().required()',
 								description:
-									'The Yup validation schema, DO NOT include "yup." (e.g., string().required())',
-								noDataExpression: true,
+									'The Yup validation schema. The "yup" object is available. (e.g., yup.string().required())',
 							},
 						],
 					},
@@ -77,7 +76,7 @@ class YupValidation implements INodeType {
 							continue;
 						}
 
-						const schemaBuilder = new Function('yup', `return yup.${validationSchema}`);
+						const schemaBuilder = new Function('yup', `return ${validationSchema}`);
 						const schema = schemaBuilder(yup);
 
 						schema.validateSync(fieldValue, { abortEarly: false, strict: true });
