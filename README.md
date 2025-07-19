@@ -1,4 +1,4 @@
-# n8n-nodes-yup-validator
+# n8n-nodes-yup-validation
 
 This is an n8n community node. It lets you use [Yup](https://github.com/jquense/yup) for data validation in your n8n workflows.
 
