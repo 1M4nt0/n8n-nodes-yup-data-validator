@@ -1,2 +1,4 @@
 .DS_Store
 *.tsbuildinfo
+nodes
+node_modules
