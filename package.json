@@ -1,7 +1,7 @@
 {
-  "name": "n8n-nodes-yup-validation",
+  "name": "n8n-nodes-yup-data-validator",
   "version": "0.1.0",
-  "description": "Yup Validation Node for n8n",
+  "description": "Data Validator Node with Yup for n8n",
   "keywords": [
     "n8n-community-node-package"
   ],
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/1M4nt0/n8n-nodes-yup-validation.git"
+    "url": "https://github.com/1M4nt0/n8n-nodes-yup-data-validator.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -34,7 +34,7 @@
     "n8nNodesApiVersion": 1,
     "credentials": [],
     "nodes": [
-      "dist/nodes/YupValidation/YupValidation.node.js"
+      "dist/nodes/YupDataValidator/YupDataValidation.node.js"
     ]
   },
   "dependencies": {

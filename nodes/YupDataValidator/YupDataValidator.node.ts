@@ -7,16 +7,16 @@ import type {
 import * as yup from 'yup';
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 
-class YupValidation implements INodeType {
+class YupDataValidator implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Yup Validation',
-		name: 'yupValidation',
+		displayName: 'Yup Data Validator',
+		name: 'yupDataValidator',
 		group: ['transform'],
 		version: 1,
 		icon: { light: 'file:logo_light.svg', dark: 'file:logo_dark.svg' },
-		description: 'Yup Validation Node',
+		description: 'Yup Data Validator Node',
 		defaults: {
-			name: 'Yup Validation',
+			name: 'Yup Data Validator',
 		},
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
@@ -114,4 +114,4 @@ class YupValidation implements INodeType {
 	}
 }
 
-export { YupValidation };
+export { YupDataValidator };
