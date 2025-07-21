@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-yup-data-validator",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Data Validator Node with Yup for n8n",
   "keywords": [
     "n8n-community-node-package",
@@ -39,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "yup": "1.6.1"
+    "schema-to-yup": "^1.12.18"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "~8.32.0",

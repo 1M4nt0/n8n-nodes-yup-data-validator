@@ -4,7 +4,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 } from 'n8n-workflow';
-import * as yup from 'yup';
+import { buildYup } from 'schema-to-yup';
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 
 class YupDataValidator implements INodeType {
@@ -46,10 +46,9 @@ class YupDataValidator implements INodeType {
 							{
 								displayName: 'Validation Schema',
 								name: 'validationSchema',
-								type: 'string',
-								default: 'yup.string().required()',
-								description:
-									'The Yup validation schema. The "yup" object is available. (e.g., yup.string().required())',
+								type: 'json',
+								default: '{}',
+								description: 'The JSON Schema to validate the data against',
 							},
 						],
 					},
@@ -77,8 +76,7 @@ class YupDataValidator implements INodeType {
 							continue;
 						}
 
-						const schemaBuilder = new Function('yup', `return ${validationSchema}`);
-						const schema = schemaBuilder(yup);
+						const schema = buildYup(JSON.parse(validationSchema));
 
 						schema.validateSync(fieldValue, { abortEarly: false, strict: true });
 					}
