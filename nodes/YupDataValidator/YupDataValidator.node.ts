@@ -7,6 +7,10 @@ import type {
 import { buildYup } from 'schema-to-yup';
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 
+const DEFAULT_SCHEMA = `{
+  "type": "object"
+}`;
+
 class YupDataValidator implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Yup Data Validator',
@@ -40,15 +44,18 @@ class YupDataValidator implements INodeType {
 								displayName: 'Field Value',
 								name: 'fieldValue',
 								type: 'json',
-								default: '',
-								description: 'The value of the field to validate from the input data',
+								default: '{}',
+								description: 'Drag a field from the left or insert the whole JSON item',
+								placeholder: '{{$json}}',
+								required: true,
 							},
 							{
 								displayName: 'Validation Schema',
 								name: 'validationSchema',
 								type: 'json',
-								default: '{}',
+								default: DEFAULT_SCHEMA,
 								description: 'The JSON Schema to validate the data against',
+								required: true,
 							},
 						],
 					},

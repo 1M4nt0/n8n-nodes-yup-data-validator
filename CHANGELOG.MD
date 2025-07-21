@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **BREAKING CHANGE**: Switched from Yup schema string to JSON schema for validation to enhance security by removing code evaluation.
+- Improved UI for the node parameters
 
 ## [0.1.1]
 
